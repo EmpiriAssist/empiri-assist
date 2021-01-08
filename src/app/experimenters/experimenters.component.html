@@ -1,0 +1,42 @@
+<h2>Experimenter</h2>
+<form action="/my-handling-form-page" method="post">
+  <div style="overflow-x:auto;">
+    <table> 
+      <tr> 
+        <th>Name:</th><td><input type="text" #experimenterName /></td>
+      </tr> 
+      <tr>
+        <th>Email:</th><td><input type="text" #experimenterEmail /></td>
+      </tr>
+      <tr>
+        <th>Organization:</th><td><input type="text" #experimenterOrganization /></td>
+      </tr>
+      <tr>
+        <th>Role:</th><td>
+          <select #experimenterRole>
+            <option value='' disabled selected>Select</option>
+            <option value="Responsible">Responsible</option>
+            <option value="Collaborator">Collaborator</option>
+          </select></td>
+      </tr>
+      <tr>
+        <th>Tasks:</th><td><input type="text" #experimenterTasks /></td>
+      </tr>
+    </table>
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="submit" (click)="add(experimenterName.value, experimenterEmail.value, experimenterOrganization.value, experimenterRole.value, 
+    experimenterTasks.value); experimenterName.value=''; experimenterEmail.value=''; experimenterOrganization.value=''; 
+    experimenterRole.value=''; experimenterTasks.value='';">
+      Add
+    </button>
+  </div>
+</form>
+<ul class="experimenters">
+  <li *ngFor="let experimenter of experimenters"
+    [class.selected]="experimenter === selectedAbstract"
+    (click)="onSelect(experimenter)">
+    <span class="badge">{{experimenter.id}}</span>  {{experimenter.name}} {{experimenter.email}} {{experimenter.organization}} {{experimenter.role}} {{experimenter.tasks}}
+  </li>
+</ul>
+

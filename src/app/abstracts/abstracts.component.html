@@ -1,0 +1,35 @@
+<h2>Abstract</h2>
+<form action="/my-handling-form-page" method="post">
+  <div style="overflow-x:auto;">
+    <table> 
+      <tr> 
+        <th>Context:</th><td><input type="text" #abstractContext /></td>
+      </tr>
+      <tr> 
+        <th>Goal:</th><td><input type="text" #abstractGoal /></td>
+      </tr> 
+      <tr>
+        <th>Method:</th><td><input type="text" #abstractMethod /></td>
+      </tr>
+      <tr>
+        <th>Results:</th><td><input type="text" #abstractResults /></td>
+      </tr>
+      <tr>
+        <th>Conclusions:</th><td><input type="text" #abstractConclusions /></td>
+      </tr>
+      <tr> 
+    </table>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="submit" (click)="add(abstractContext.value, abstractGoal.value, abstractMethod.value, abstractResults.value, 
+  abstractConclusions.value); abstractContext.value=''; abstractGoal.value=''; abstractMethod.value=''; 
+  abstractResults.value=''; abstractConclusions.value=''">
+    Add
+  </button>
+</div>
+  <ul class="abstracts">
+    <li *ngFor="let abstract of abstracts"
+      [class.selected]="abstract === selectedAbstract"
+      (click)="onSelect(abstract)">
+      <span class="badge">{{abstract.id}}</span>  {{abstract.context}} {{abstract.goal}} {{abstract.method}} {{abstract.results}} {{abstract.conclusions}}
+    </li>
+  </ul>
