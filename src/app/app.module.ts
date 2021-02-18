@@ -17,6 +17,7 @@ import { AbstractsComponent } from './abstracts/abstracts.component';
 import { ExperimentersComponent } from './experimenters/experimenters.component';
 import { GoalsComponent } from './goals/goals.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
+import { ExperimentDetailComponent } from './experiment-detail/experiment-detail.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { ExperimentsComponent } from './experiments/experiments.component';
     ExperimentersComponent,
     GoalsComponent,
     ExperimentsComponent,
+    ExperimentDetailComponent,
     HeroesComponent,
     HeroDetailComponent,
     HeroSearchComponent

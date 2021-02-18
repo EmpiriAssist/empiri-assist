@@ -1,84 +1,21 @@
-<h1>Experiment <input id="experimentName" #experimentName /></h1>
-<form action="/my-handling-form-page" method="post">
-  <div style="overflow-x:auto;">
-    <h3>Abstract:</h3>
-    <table> 
-      <tr> 
-        <th>Context:</th><td><input type="text" #experimentContext /></td>
-      </tr>
-      <tr> 
-        <th>Goal:</th><td><input type="text" #experimentGoal /></td>
-      </tr> 
-      <tr>
-        <th>Method:</th><td><input type="text" #experimentMethod /></td>
-      </tr>
-      <tr>
-        <th>Results:</th><td><input type="text" #experimentResults /></td>
-      </tr>
-      <tr>
-        <th>Conclusions:</th><td><input type="text" #experimentConclusions /></td>
-      </tr>
-      <tr> 
-    </table>
-    <td></td>
-    <h3>Goal:</h3>
-    <table> 
-      <tr> 
-        <th>Analyze</th><td><input type="text" #experimentAnalyze /></td>
-      </tr>
-      <tr> 
-        <th>for the purpose of</th><td><input type="text" #experimentPurpose /></td>
-      </tr> 
-      <tr>
-        <th>with respect to</th><td><input type="text" #experimentRespect /></td>
-      </tr>
-      <tr>
-        <th>from the point of view of</th><td><input type="text" #experimentPointOfView /></td>
-      </tr>
-      <tr>
-        <th>in the context of</th><td><input type="text" #experimentContext /></td>
-      </tr>
-      <tr> 
-    </table>
-    <td></td>
-    <h3>Experimenters:</h3>
-    <table id="experimenterTable"> 
-      <tr>
-        <th id="experimenterTh">Name:</th>
-        <th id="experimenterTh">Email:</th>
-        <th id="experimenterTh">Organization:</th>
-        <th id="experimenterTh">Role:</th>
-        <th id="experimenterTh">Tasks:</th>
-        <th>
-          <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
-        </th>
-      </tr> 
-      <tr *ngFor="let field of fieldArray; let i = index">
-        <td><input type="text" #experimentName /></td>
-        <td><input type="text" #experimentEmail /></td>
-        <td><input type="text" #experimentOrganization /></td>
-        <td>
-          <select #experimentRole>
-            <option value='' disabled selected>Select</option>
-            <option value="Responsible">Responsible</option>
-            <option value="Collaborator">Collaborator</option>
-          </select>
-        </td>
-        <td><input type="text" #experimentTasks/></td>
-        <td>
-          <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
-        </td>
-      </tr>
-    </table>
-    <button type="submit" (click)="add(experimentContext.value, experimentGoal.value, experimentMethod.value,
-    experimentResults.value, experimentConclusions.value,
-    experimentAnalyze.value, experimentPurpose.value, experimentRespect.value, experimentPointOfView.value, 
-    experimentContext.value, experimentName.value, experimentEmail.value, 
-    experimentOrganization.value, experimentRole.value, experimentTasks.value);">
-      Add
-    </button>
-  </div>
-</form>
+<h2>My Experiments</h2>
 
-<!-- experimentName.value=''; experimentEmail.value=''; experimentOrganization.value=''; 
-experimentRole.value=''; -->
+<div>
+  <label>Experiment name:
+    <input #experimentName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+ <!--<button (click)="add(experimentName.value); experimentName.value=''">
+    add
+  </button>-->
+</div>
+
+<ul class="experiments">
+  <li *ngFor="let experiment of experiments">
+    <a routerLink="/experiment/{{experiment.id}}">
+      <span class="badge">{{experiment.id}}</span> {{experiment.name}}, {{experiment.context}}
+    </a>
+    <button class="delete" title="delete experiment"
+      (click)="delete(experiment)">x</button>
+  </li>
+</ul>

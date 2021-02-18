@@ -1,11 +1,17 @@
-import { Abstract } from "./abstract";
 import { Experimenter } from './experimenter';
-import { Goal } from './goal';
 
 export class Experiment{
     id: number;
-    name: String;
-    abstract: Abstract;
-    goal: Goal;
-    experimenters: Experimenter[];
+    name: string;
+    context: string;
+    goal: string;
+    method: string;
+    results: string;
+    conclusions: string;
+    analyze: string;
+    purpose: string;
+    respect: string;
+    pointOfView: string;
+    contextGoal: string;
+    experimenters?: Experimenter[];
 }

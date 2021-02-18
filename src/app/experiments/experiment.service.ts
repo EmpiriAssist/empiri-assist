@@ -6,12 +6,17 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from '../message.service';
 
 import { Experiment } from '../experiment';
+import { Experimenter } from '../experimenter';
 
 
 @Injectable({ providedIn: 'root' })
 export class ExperimentService {
 
   private experimentsUrl = 'api/experiments';  // URL to web api
+  private experimentersUrl = 'api/experimenters';  // URL to web api
+  
+  experimenters: Experimenter[];
+  
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -92,6 +97,26 @@ export class ExperimentService {
     return this.http.put(this.experimentsUrl, experiment, this.httpOptions).pipe(
       tap(_ => this.log(`updated experiment id=${experiment.id}`)),
       catchError(this.handleError<any>('updateExperiment'))
+    );
+  }
+
+  //////// Experimenter methods //////////
+
+  getExperimenters() {
+    return this.experimenters;
+  }
+
+  addExperimenter(experimenter) {
+    this.experimenters.push(experimenter);
+  }
+
+  deleteExperimenter(experimenter: Experimenter | number): Observable<Experiment> {
+    const id = typeof experimenter === 'number' ? experimenter : experimenter.id;
+    const url = `${this.experimentersUrl}/${id}`;
+
+    return this.http.delete<Experiment>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted experimenter id=${id}`)),
+      catchError(this.handleError<Experiment>('deleteExperimenter'))
     );
   }
 
