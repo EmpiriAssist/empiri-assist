@@ -39,7 +39,7 @@ export class ExperimentsComponent implements OnInit {
     .subscribe(experiments => this.experiments = experiments);
   }
   add(name: string, context: string, goal: string, method: string, results: string, conclusions: string,
-      analyze: string, purpose: string, respect: string, pointOfView: string, contextGoal: string): void {
+      analyze: string, purpose: string, respect: string, pointOfView: string, contextGoal: string, experimenters: Experimenter[]): void {
 
     name = name.trim();
     context = context.trim();
@@ -52,10 +52,11 @@ export class ExperimentsComponent implements OnInit {
     respect = respect.trim();
     pointOfView = pointOfView.trim();
     contextGoal = contextGoal.trim();
+    experimenters = this.experimentService.getExperimenters();
 
     if (!name) { return; }
     this.experimentService.addExperiment({ name, context, goal, method, results, conclusions, analyze, purpose, respect, pointOfView,
-    contextGoal } as Experiment)
+    contextGoal, experimenters } as Experiment)
       .subscribe(name => {
         this.experiments.push(name);
       });

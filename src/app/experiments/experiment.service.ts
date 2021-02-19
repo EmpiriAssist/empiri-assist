@@ -106,7 +106,7 @@ export class ExperimentService {
     return this.experimenters;
   }
 
-  addExperimenter(experimenter) {
+  addExperimenter(experimenter: Experimenter) {
     this.experimenters.push(experimenter);
   }
 

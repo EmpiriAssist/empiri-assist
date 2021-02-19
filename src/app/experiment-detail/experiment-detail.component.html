@@ -52,7 +52,7 @@
 
       </tr> 
       
-      <tr *ngFor="let experimenter of experimenters; let i = index">
+      <tr *ngFor="let experimenter of experimenters">
         <td><input type="text" [(ngModel)]="experimenter.name" /></td>
         <td><input type="text" [(ngModel)]="experimenter.email" /></td>
         <td><input type="text" [(ngModel)]="experimenter.organization" /></td>
@@ -65,23 +65,25 @@
         </td>
         <td><input type="text" [(ngModel)]="experimenter.tasks"/></td>
         <td>
-          <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+          <button class="btn btn-default"  type="button" (click)="deleteExperimenter(experimenter)">Delete</button>
         </td>
       </tr>
     <tr>
-        <td><input type="text" [(ngModel)]="experimenter.name" /></td>
-        <td><input type="text" [(ngModel)]="experimenter.email" /></td>
-        <td><input type="text" [(ngModel)]="experimenter.organization" /></td>
+        <td><input type="text" #experimenterName /></td>
+        <td><input type="text" #experimenterEmail /></td>
+        <td><input type="text" #experimenterOrganization /></td>
         <td>
-          <select #experimentRole>
+          <select #experimenterRole>
             <option value='' disabled selected>Select</option>
             <option value="Responsible">Responsible</option>
             <option value="Collaborator">Collaborator</option>
           </select>
         </td>
-        <td><input type="text" [(ngModel)]="experimenter.tasks"/></td>
+        <td><input type="text" #experimenterTasks /></td>
         <td>
-          <button class="btn btn-default"  type="button" (click)="addExperimenter(experimenter)">Save</button>
+          <button class="btn btn-default"  type="button" (click)="addExperimenter(experimenterName.value, experimenterEmail.value, experimenterOrganization.value, experimenterRole.value, 
+          experimenterTasks.value); experimenterName.value=''; experimenterEmail.value=''; experimenterOrganization.value=''; 
+          experimenterRole.value=''; experimenterTasks.value='';">Save</button>
         </td>
       </tr>
     </table>
