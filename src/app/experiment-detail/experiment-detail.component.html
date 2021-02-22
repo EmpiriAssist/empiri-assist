@@ -1,54 +1,54 @@
-<h1>Experiment <input id="experimentName" [(ngModel)]="experiment.name" /></h1>
+<h1 i18n="experiment title">Experiment <input id="experimentName" [(ngModel)]="experiment.name" /></h1>
 
   <div style="overflow-x:auto;">
-    <h3>Abstract:</h3>
+    <h3 i18n>Abstract:</h3>
     <table> 
       <tr> 
-        <th>Context:</th><td><input type="text" [(ngModel)]="experiment.context" /></td>
+        <th i18n="context">Context:</th><td><input type="text" [(ngModel)]="experiment.context" /></td>
       </tr>
       <tr> 
-        <th>Goal:</th><td><input type="text" [(ngModel)]="experiment.goal" /></td>
+        <th i18n="goal">Goal:</th><td><input type="text" [(ngModel)]="experiment.goal" /></td>
       </tr> 
       <tr>
-        <th>Method:</th><td><input type="text" [(ngModel)]="experiment.method" /></td>
+        <th i18n="method">Method:</th><td><input type="text" [(ngModel)]="experiment.method" /></td>
       </tr>
       <tr>
-        <th>Results:</th><td><input type="text" [(ngModel)]="experiment.results" /></td>
+        <th i18n="results">Results:</th><td><input type="text" [(ngModel)]="experiment.results" /></td>
       </tr>
       <tr>
-        <th>Conclusions:</th><td><input type="text" [(ngModel)]="experiment.conclusions" /></td>
+        <th i18n="conclusions">Conclusions:</th><td><input type="text" [(ngModel)]="experiment.conclusions" /></td>
       </tr>
       <tr> 
     </table>
     <td></td>
-    <h3>Goal:</h3>
+    <h3 i18n>Goal:</h3>
     <table> 
       <tr> 
-        <th>Analyze</th><td><input type="text" [(ngModel)]="experiment.analyze" /></td>
+        <th i18n="analyze">Analyze</th><td><input type="text" [(ngModel)]="experiment.analyze" /></td>
       </tr>
       <tr> 
-        <th>for the purpose of</th><td><input type="text" [(ngModel)]="experiment.purpose" /></td>
+        <th i18n="purpose">for the purpose of</th><td><input type="text" [(ngModel)]="experiment.purpose" /></td>
       </tr> 
       <tr>
-        <th>with respect to</th><td><input type="text" [(ngModel)]="experiment.respect" /></td>
+        <th i18n="respect">with respect to</th><td><input type="text" [(ngModel)]="experiment.respect" /></td>
       </tr>
       <tr>
-        <th>from the point of view of</th><td><input type="text" [(ngModel)]="experiment.pointOfView" /></td>
+        <th i18n="pointOfView">from the point of view of</th><td><input type="text" [(ngModel)]="experiment.pointOfView" /></td>
       </tr>
       <tr>
-        <th>in the context of</th><td><input type="text" [(ngModel)]="experiment.contextGoal" /></td>
+        <th i18n="inTheContext">in the context of</th><td><input type="text" [(ngModel)]="experiment.contextGoal" /></td>
       </tr>
       <tr> 
     </table>
     <td></td>
-    <h3>Experimenters:</h3>
+    <h3 i18n="experimenters">Experimenters:</h3>
     <table id="experimenterTable"> 
       <tr>
-        <th id="experimenterTh">Name:</th>
-        <th id="experimenterTh">Email:</th>
-        <th id="experimenterTh">Organization:</th>
-        <th id="experimenterTh">Role:</th>
-        <th id="experimenterTh">Tasks:</th>
+        <th id="experimenterTh" i18n="name">Name:</th>
+        <th id="experimenterTh" i18n="email">Email:</th>
+        <th id="experimenterTh" i18n="organizacion">Organization:</th>
+        <th id="experimenterTh" i18n="role">Role:</th>
+        <th id="experimenterTh" i18n="tasks">Tasks:</th>
 
       </tr> 
       
@@ -57,15 +57,15 @@
         <td><input type="text" [(ngModel)]="experimenter.email" /></td>
         <td><input type="text" [(ngModel)]="experimenter.organization" /></td>
         <td>
-          <select #experimentRole>
-            <option value='' disabled selected>Select</option>
-            <option value="Responsible">Responsible</option>
-            <option value="Collaborator">Collaborator</option>
+          <select [(ngModel)]="experimenter.role">
+            <option value='' disabled selected i18n="select">Select</option>
+            <option value="Responsible" i18n="responsible">Responsible</option>
+            <option value="Collaborator" i18n="collaborator">Collaborator</option>
           </select>
         </td>
         <td><input type="text" [(ngModel)]="experimenter.tasks"/></td>
         <td>
-          <button class="btn btn-default"  type="button" (click)="deleteExperimenter(experimenter)">Delete</button>
+          <button class="btn btn-default"  type="button" (click)="deleteExperimenter(experimenter)" i18n="delete button">Delete</button>
         </td>
       </tr>
     <tr>
@@ -74,21 +74,21 @@
         <td><input type="text" #experimenterOrganization /></td>
         <td>
           <select #experimenterRole>
-            <option value='' disabled selected>Select</option>
-            <option value="Responsible">Responsible</option>
-            <option value="Collaborator">Collaborator</option>
+            <option value='' disabled selected i18n="select">Select</option>
+            <option value="Responsible" i18n="responsible">Responsible</option>
+            <option value="Collaborator" i18n="collaborator">Collaborator</option>
           </select>
         </td>
         <td><input type="text" #experimenterTasks /></td>
         <td>
           <button class="btn btn-default"  type="button" (click)="addExperimenter(experimenterName.value, experimenterEmail.value, experimenterOrganization.value, experimenterRole.value, 
           experimenterTasks.value); experimenterName.value=''; experimenterEmail.value=''; experimenterOrganization.value=''; 
-          experimenterRole.value=''; experimenterTasks.value='';">Save</button>
+          experimenterRole.value=''; experimenterTasks.value='';" i18n="save button">Save</button>
         </td>
       </tr>
     </table>
-    <button id="but" (click)="save()">
+    <button id="but" (click)="save()" i18n="save button">
       Save
     </button>
-    <button id="but" (click)="goBack()">go back</button>
+    <button id="but" (click)="goBack()" i18n="go back button">go back</button>
   </div>

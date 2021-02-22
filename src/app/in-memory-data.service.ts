@@ -10,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
 
     const experiments = [
-      { id: 100, name: 'Experimento', context: 'Prueba', goal: 'Prueba', method: 'Prueba', results: 'Prueba', conclusions: 'Prueba', analyze: 'analyze', purpose: 'purpose', respect: 'respect', pointOfView: 'pointOfView', contextGoal: 'context' },
+      { id: 100, name: 'Experimento', context: 'Prueba', goal: 'Prueba', method: 'Prueba', results: 'Prueba', conclusions: 'Prueba', analyze: 'analyze', purpose: 'purpose', respect: 'respect', pointOfView: 'pointOfView', contextGoal: 'context'},
       { id: 101, name: 'Experiment', context: 'A', goal: 'B', method: 'C', results: 'D', conclusions: 'E', analyze: 'A', purpose: 'P', respect: 'R', pointOfView: 'P', contextGoal: 'C' }
     ];
 

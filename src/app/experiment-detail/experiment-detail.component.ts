@@ -14,9 +14,8 @@ import { Experimenter } from '../experimenter';
 })
 export class ExperimentDetailComponent implements OnInit {
   experiment: Experiment;
-  experimenter: Experimenter;
   role = Role;
-  experimenters: Experimenter[] = this.experimentService.getExperimenters();
+  experimenters = this.experimentService.getExperimenters();
   fieldArray: Array<any> = [];
   field: any = {};
   

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="82421c3e46a0453a70c42900eab51d58d79e6599" datatype="html">
+        <source>Main</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">main</note>
+      </trans-unit>
+      <trans-unit id="33a29e29d6c1ae044e8e3350733a49c8dbeb18af" datatype="html">
+        <source>Heroes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">heroes</note>
+      </trans-unit>
+      <trans-unit id="5f27726154e0e74a500ccd7a71df6e212dd6ce11" datatype="html">
+        <source>Experiments</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">esperiments</note>
+      </trans-unit>
+      <trans-unit id="a2d8b7b45067c26c9b567e14dfaf4a5403b1f08c" datatype="html">
+        <source>Abstracts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">abstracts</note>
+      </trans-unit>
+      <trans-unit id="bafc02a2aa1288075e20ccc912094984428d6808" datatype="html">
+        <source>Experimenters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">experimenters</note>
+      </trans-unit>
+      <trans-unit id="7a9fde6971f809a5903706fe2c24c485403a61e3" datatype="html">
+        <source>Goals</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">goals</note>
+      </trans-unit>
+      <trans-unit id="1329cb256235779416d59bec30a23386a51c3804" datatype="html">
+        <source>My Experiments</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiments/experiments.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="99d0f7fa3991bf15069bc6de95614f378a9bca27" datatype="html">
+        <source>Experiment name: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input #experimentName /&gt;
+  "/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiments/experiments.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+        <note priority="1" from="description">experiment name</note>
+      </trans-unit>
+      <trans-unit id="3ebf3710ec6279d52d6e68194c74e4d5745cf874" datatype="html">
+        <source>Experiment <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input id=&quot;experimentName&quot; [(ngModel)]=&quot;experiment.name&quot; /&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">experiment title</note>
+      </trans-unit>
+      <trans-unit id="9407e64ecc60e558183c6b532d05c3970d6214f6" datatype="html">
+        <source>Abstract:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e31cc34f12135551f883e63c772ba1c8b297a6fe" datatype="html">
+        <source>Context:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">context</note>
+      </trans-unit>
+      <trans-unit id="2047c5b91091c71f31ecac370c69c02a3b3a7480" datatype="html">
+        <source>Goal:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">goal</note>
+      </trans-unit>
+      <trans-unit id="a139173e6f53d98cc0bd2ebd5e2126c0555bad0b" datatype="html">
+        <source>Method:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">method</note>
+      </trans-unit>
+      <trans-unit id="3316c69b43a2528e6fd31ffdcc60e41a9d710bba" datatype="html">
+        <source>Results:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">results</note>
+      </trans-unit>
+      <trans-unit id="48b7e21bacfeecb05288497b1e5aea3fa12d6f96" datatype="html">
+        <source>Conclusions:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">conclusions</note>
+      </trans-unit>
+      <trans-unit id="1b29d1c51bb40cd2f793ecef77523ae551c81676" datatype="html">
+        <source>Analyze</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">analyze</note>
+      </trans-unit>
+      <trans-unit id="2cb4beea242bf806250d32e1e98baa9663a79c10" datatype="html">
+        <source>for the purpose of</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">purpose</note>
+      </trans-unit>
+      <trans-unit id="d9b072697aa27817c7c5ac132fbe952312efa604" datatype="html">
+        <source>with respect to</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="description">respect</note>
+      </trans-unit>
+      <trans-unit id="78114a08001038eb3d3bfa96afae11db2eb7689f" datatype="html">
+        <source>from the point of view of</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">pointOfView</note>
+      </trans-unit>
+      <trans-unit id="ef7856912ec32f255ce8f6155adaf110951bbfb0" datatype="html">
+        <source>in the context of</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">inTheContext</note>
+      </trans-unit>
+      <trans-unit id="99332f598a5cf2f9560909507cc1af92dbfb883d" datatype="html">
+        <source>Experimenters:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <note priority="1" from="description">experimenters</note>
+      </trans-unit>
+      <trans-unit id="616e206cb4f25bd5885fc35925365e43cf5fb929" datatype="html">
+        <source>Name:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <note priority="1" from="description">name</note>
+      </trans-unit>
+      <trans-unit id="91b96d7228b6e05c238fa4e39abfc17ad51a6eef" datatype="html">
+        <source>Email:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <note priority="1" from="description">email</note>
+      </trans-unit>
+      <trans-unit id="d8bed28f957c72af28fdedf17eb2d890c322310f" datatype="html">
+        <source>Organization:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">organizacion</note>
+      </trans-unit>
+      <trans-unit id="fe85c4fbbaf58250de4a57e8595dbc9bafe8713b" datatype="html">
+        <source>Role:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">role</note>
+      </trans-unit>
+      <trans-unit id="ed9b07e91b831a27867345b0555adb38712cfff3" datatype="html">
+        <source>Tasks:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">tasks</note>
+      </trans-unit>
+      <trans-unit id="9ca82952a6bc860b5391d5975322d8af8ceddfa4" datatype="html">
+        <source>Select</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <note priority="1" from="description">select</note>
+      </trans-unit>
+      <trans-unit id="4359ac356f7f230dd75395d4ece2ddbb8974f260" datatype="html">
+        <source>Responsible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <note priority="1" from="description">responsible</note>
+      </trans-unit>
+      <trans-unit id="d802027a8ace58f2b616cbd95939e42762e82361" datatype="html">
+        <source>Collaborator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">collaborator</note>
+      </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Save</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+        <note priority="1" from="description">save button</note>
+      </trans-unit>
+      <trans-unit id="2a62a59d9424e9e869061ebf3e8f8b8f95411571" datatype="html">
+        <source> Save </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">91,92</context>
+        </context-group>
+        <note priority="1" from="description">save button</note>
+      </trans-unit>
+      <trans-unit id="498c59cee04355857c15b3dd248c3fd0bacb0273" datatype="html">
+        <source>go back</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <note priority="1" from="description">go back button</note>
+      </trans-unit>
+      <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
+        <source>Delete</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/experiment-detail/experiment-detail.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <note priority="1" from="description">delete button</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
