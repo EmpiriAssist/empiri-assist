@@ -15,8 +15,7 @@ export class ExperimentService {
   private experimentsUrl = 'api/experiments';  // URL to web api
   private experimentersUrl = 'api/experimenters';  // URL to web api
   
-  experimenters: Experimenter[];
-  
+  experimenters: Experimenter[] = [];
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
