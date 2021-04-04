@@ -18,6 +18,8 @@ import { ExperimentersComponent } from './experimenters/experimenters.component'
 import { GoalsComponent } from './goals/goals.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
 import { ExperimentDetailComponent } from './experiment-detail/experiment-detail.component';
+import { WizardComponent } from './wizard/wizard.component';
+import { DecisionTreeFormComponent } from './wizard/decision-tree-form/decision-tree-form.component';
 
 @NgModule({
   imports: [
@@ -43,7 +45,9 @@ import { ExperimentDetailComponent } from './experiment-detail/experiment-detail
     ExperimentDetailComponent,
     HeroesComponent,
     HeroDetailComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    WizardComponent,
+    DecisionTreeFormComponent
   ],
   bootstrap: [ AppComponent ]
 })

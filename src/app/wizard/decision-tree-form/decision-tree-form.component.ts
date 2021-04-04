@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { IDecisionTree, TreeNode, nodeList } from "./nodes";
 
 @Component({
-  selector: "app-decision-tree-form",
+  selector: "wizard-decision-tree-form",
   templateUrl: "./decision-tree-form.component.html",
   styleUrls: ["./decision-tree-form.component.css"]
 })
