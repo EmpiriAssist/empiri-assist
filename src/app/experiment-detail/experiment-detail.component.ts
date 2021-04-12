@@ -68,10 +68,6 @@ export class ExperimentDetailComponent implements OnInit {
     role = role;
     tasks = tasks;
     if (!name) { return; }
-    this.experimenterService.addExperimenter({ name, email, organization, role, tasks } as Experimenter)
-      .subscribe(experimenter => {
-        this.experimenters.push(experimenter);
-      });
     this.experimentService.addExperimenter({ name, email, organization, role, tasks } as Experimenter);
     
     this.experimentService.updateExperiment(this.experiment);

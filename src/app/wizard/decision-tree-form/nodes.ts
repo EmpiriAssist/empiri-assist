@@ -8,17 +8,23 @@ export interface IIndexedTreeNode {
 export class TreeNode {
   public readonly id: nodeId;
   public readonly description: string;
+  public readonly nameYes: string;
+  public readonly nameNo: string;
   public decision: boolean | null;
   public readonly yesId: nodeId | null;
   public readonly noId: nodeId | null;
   constructor(
     id: nodeId,
     description: string,
+    nameYes: string,
+    nameNo: string,
     yesId: nodeId | null,
     noId: nodeId | null
   ) {
     this.id = id;
     this.description = description;
+    this.nameYes = nameYes;
+    this.nameNo = nameNo;
     this.decision = null; // <-- must be null on creation. wait for decision from user.
     this.yesId = yesId;
     this.noId = noId;
@@ -29,88 +35,82 @@ export class TreeNode {
  * Possible values for a node id.
  */
 export type nodeId =
-  | "chestPain"
-  | "twaveInversion"
-  | "rateOver100"
-  | "hypotensive"
-  | "nstemi"
-  | "unstableAngina"
-  | "sedate"
-  | "qrsOver012"
-  | "vtGetExpertHelp"
-  | "qrsRegular"
-  | "svtVagal"
-  | "pwavesPresent"
-  | "atrialFibrilation"
-  | "aflutter"
-  | "rate100temp";
+  | "tipoDeExperimento"
+  | "experimentoObservacional"
+  | "experimentoExperimental"
+  | "ruidoFactor"
+  | "tipoFactor"
+  | "dominio"
+  | "dominioDiscreto"
+  | "tipoVariable"
+  ;
 /**
  * Dictionary of nodes by their id.
  */
 export const nodeList = {
-  chestPain: new TreeNode(
-    "chestPain",
-    "Chest Pain?",
-    "twaveInversion",
-    "rateOver100"
+  tipoDeExperimento: new TreeNode(
+    "tipoDeExperimento",
+    "Selecciona tipo de esperimento",
+    "Experimento observacional",
+    "Experimento experimental",
+    "experimentoObservacional",
+    "experimentoExperimental"
   ),
-  twaveInversion: new TreeNode(
-    "twaveInversion",
-    "Twave Inversion?",
-    "nstemi",
-    "unstableAngina"
+  experimentoObservacional: new TreeNode(
+    "experimentoObservacional",
+    "¿Es una variable de tipo de salida?",
+    "Si",
+    "No",
+    "dominio",
+    "ruidoFactor"
   ),
-  unstableAngina: new TreeNode("unstableAngina", "Unstable Angina", null, null),
-  nstemi: new TreeNode("nstemi", "NSTEMI", null, null),
-  rateOver100: new TreeNode(
-    "rateOver100",
-    "Rate > 100?",
-    "hypotensive",
-    "rate100temp"
-  ),
-  hypotensive: new TreeNode(
-    "hypotensive",
-    "Hypotensive?",
-    "sedate",
-    "qrsOver012"
-  ),
-  sedate: new TreeNode("sedate", "Sedate.", null, null),
-  qrsOver012: new TreeNode(
-    "qrsOver012",
-    "QRS > 0.12s ?",
-    "vtGetExpertHelp",
-    "qrsRegular"
-  ),
-  vtGetExpertHelp: new TreeNode(
-    "vtGetExpertHelp",
-    "VT Get expert help.",
+  experimentoExperimental: new TreeNode(
+    "experimentoExperimental",
+    "Nada por ahora",
+    "Nada por ahora",
+    "Nada por ahora",
     null,
     null
   ),
-  qrsRegular: new TreeNode(
-    "qrsRegular",
-    "QRS regular?",
-    "svtVagal",
-    "pwavesPresent"
+  ruidoFactor: new TreeNode(
+    "ruidoFactor",
+    "¿Es un factor o un ruido ambiental?",
+    "Tipo Factor",
+    "Tipo Ruido ambiental",
+    "tipoFactor",
+    "dominio"
   ),
-  svtVagal: new TreeNode("svtVagal", "SVT Vagal", null, null),
-  pwavesPresent: new TreeNode(
-    "pwavesPresent",
-    "Pwaves present?",
-    "aflutter",
-    "atrialFibrilation"
+  tipoFactor: new TreeNode(
+    "tipoFactor",
+    "¿Que papel desarrolla dentro del experimento?",
+    "Factor controlable",
+    "Factor predeterminado",
+    "dominio",
+    "dominio"
   ),
-  aflutter: new TreeNode("aflutter", "Aflutter", null, null),
-  atrialFibrilation: new TreeNode(
-    "atrialFibrilation",
-    "Afrial fibrilation",
-    null,
-    null
+  dominio: new TreeNode(
+    "dominio",
+    "¿El dominio es discreto?",
+    "Si",
+    "No",
+    "dominioDiscreto",
+    "tipoVariable"
   ),
-  rate100temp: new TreeNode(
-    "rate100temp",
-    "Rate < 100 answer (no node given)",
+  dominioDiscreto: new TreeNode(
+    "dominioDiscreto",
+    "¿De que tipo es el dominio discreto?",
+    "Numerado",
+    "No numerado",
+    "tipoVariable",
+    "tipoVariable"
+  ),
+  tipoVariable: new TreeNode(
+    "tipoVariable",
+    "Selecciona el tipo de variable",
+    "Entera, Cadena",
+    "Flotante, Booleana",
     null,
     null
   )
+
 };

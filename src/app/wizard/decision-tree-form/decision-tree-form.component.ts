@@ -21,7 +21,7 @@ export class DecisionTreeFormComponent implements OnInit {
   public reset() {
     // Init base node and tree here.
     this.decisionTree = [];
-    this.currentNode = Object.assign({}, nodeList.chestPain);
+    this.currentNode = Object.assign({}, nodeList.tipoDeExperimento);
   }
 
   public yes() {
