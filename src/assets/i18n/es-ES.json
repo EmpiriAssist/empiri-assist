@@ -1,0 +1,26 @@
+{
+    "HOME": {
+        "TITLE": "Empiri-Assist"
+    },
+
+    "dashboard": {
+        "dashboard": "Panel",
+        "wizard": "Asistente",
+        "heroes": "Heroes",
+        "experiments": "Experimentos",
+        "abstracts": "Resumenes",
+        "experimenters": "Experimentadores" ,
+        "goals": "Metas"
+    },
+    
+    "banner": {
+        "change_lang_label": "Idioma"
+    },
+
+    "wizard": {
+        "decision-tree": "Árbol de decisión",
+        "question": "Pregunta:",
+        "salida": "Salida",
+        "reset": "Reiniciar árbol"
+    }
+}
