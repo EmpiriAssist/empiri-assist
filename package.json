@@ -7,7 +7,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --prod"
+  },
+  "engines": {
+    "node": "v14.16.0",
+    "npm": "7.15.1"
   },
   "private": true,
   "dependencies": {
@@ -26,16 +31,19 @@
     "@ngx-translate/http-loader": "^6.0.0",
     "@types/angular": "^1.8.1",
     "angular-in-memory-web-api": "^0.11.0",
+    "express": "^4.17.1",
     "material-ui-flags": "^1.2.4",
     "ng-country-flags": "^1.0.7",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
-  },
-  "devDependencies": {
+    "zone.js": "~0.10.2",
     "@angular-devkit/build-angular": "~0.1100.1",
     "@angular/cli": "~11.0.1",
     "@angular/compiler-cli": "~11.0.0",
+    "typescript": "~4.0.2"
+  },
+  "devDependencies": {
     "@angular/localize": "^11.0.2",
     "@biesbjerg/ngx-translate-extract": "^7.0.4",
     "@types/jasmine": "~3.6.0",
@@ -51,7 +59,6 @@
     "karma-jasmine-html-reporter": "^1.6.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "tslint": "~6.1.0"
   }
 }
