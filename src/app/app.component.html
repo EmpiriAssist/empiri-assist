@@ -1,11 +1,16 @@
-<h1>{{title}}</h1>
+<h1>{{ 'HOME.TITLE' | translate }}</h1>
 <nav>
-  <a routerLink="/dashboard" i18n="main">Main</a>
-  <a routerLink="/wizard" i18n="wizard">Wizard</a>
-  <a routerLink="/heroes" i18n="heroes">Heroes</a>
-  <a routerLink="/experiments" i18n="esperiments">Experiments</a>
-  <a routerLink="/abstracts" i18n="abstracts">Abstracts</a>
-  <a routerLink="/experimenters" i18n="experimenters">Experimenters</a>
-  <a routerLink="/goals" i18n="goals">Goals</a>
+  <a routerLink="/dashboard">{{ 'dashboard.dashboard' | translate }}</a>
+  <a routerLink="/wizard">{{ 'dashboard.wizard' | translate }}</a>
+  <a routerLink="/heroes">{{ 'dashboard.heroes' | translate }}</a>
+  <a routerLink="/experiments">{{ 'dashboard.experiments' | translate }}</a>
+  <a routerLink="/abstracts">{{ 'dashboard.abstracts' | translate }}</a>
+  <a routerLink="/experimenters">{{ 'dashboard.experimenters' | translate }}</a>
+  <a routerLink="/goals">{{ 'dashboard.goals' | translate }}</a>
 </nav>
+<label>{{'banner.change_lang_label' | translate}}:</label>
+  <select name="language" [(ngModel)]='language' (ngModelChange)="onSelect($event)">
+    <option value="en-US">English</option>
+    <option value="es-ES">Español</option>
+  </select>
 <router-outlet></router-outlet>

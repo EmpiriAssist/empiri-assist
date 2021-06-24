@@ -1,12 +1,12 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>
-            Decision Tree
+            {{ 'wizard.decision-tree' | translate }}
         </mat-card-title>
     </mat-card-header>
     <mat-card-content>
             <ng-container *ngIf="!isFinal(currentNode)">
-                <strong>Question:</strong> {{ currentNode.description }}
+                <strong>{{ 'wizard.question' | translate }}</strong> {{ currentNode.description }}
                 <br>
                 <mat-divider></mat-divider>
                 <br>
@@ -18,21 +18,28 @@
                         {{currentNode.nameNo}}
                     </button>
             </ng-container>
-  
-        <ng-container *ngIf="isFinal(currentNode)">
-            <ng-container *ngFor="let item of decisionTree">
-                <ng-container *ngIf="item.index != decisionTree.length - 1">
-                    <strong >Q: </strong> {{item.node.description}} <u>{{item.node.decision ? 'yes' : 'no'}}</u> -->&nbsp;
-                </ng-container>
-                <ng-container *ngIf="item.index == decisionTree.length - 1">
-                    <strong [style.color]="'red'">Salida: </strong> {{item.node.description}}
-                </ng-container>
+            <br>
+        <br>
+        <ng-container *ngFor="let item of decisionTree">
+            <ng-container *ngIf="item.index != decisionTree.length - 1">
+                <strong >Q: </strong> {{item.node.description}} <u>{{item.node.decision ? 'yes' : 'no'}}</u> -->&nbsp;
+
+            </ng-container>
+            <ng-container *ngIf="item.node.decision == 'yes'">
+                TEST
+            </ng-container>
+            
+            <ng-container *ngIf="item.node.decision == 'no'">
+                TEST
+            </ng-container>
+            <ng-container *ngIf="item.index == decisionTree.length - 1">
+                <strong [style.color]="'red'">{{ 'wizard.salida' | translate }} </strong> {{item.node.description}}
             </ng-container>
         </ng-container>
         <br>
-        <br>
+
         <mat-card-actions>
-            <button mat-button (click)="reset()">RESET</button>
+            <button mat-raised-button (click)="reset()">{{ 'wizard.reset' | translate }}</button>
         </mat-card-actions>
 
         <span>Current node JSON</span>&nbsp;
@@ -49,3 +56,4 @@
         </pre>
     </mat-card-content>
 </mat-card>
+

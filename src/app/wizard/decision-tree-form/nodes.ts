@@ -50,7 +50,7 @@ export type nodeId =
 export const nodeList = {
   tipoDeExperimento: new TreeNode(
     "tipoDeExperimento",
-    "Selecciona tipo de esperimento",
+    "Selecciona tipo de experimento",
     "Observacional",
     "Experimental",
     "experimentoObservacional",

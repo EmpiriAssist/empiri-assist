@@ -1,14 +1,31 @@
-import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {HttpClient} from "@angular/common/http";
+import {TestBed, waitForAsync} from '@angular/core/testing';
+import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
+import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
+import {HttpLoaderFactory} from "./app.module";
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  let translate: TranslateService;
+  let http: HttpTestingController;
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      imports: [
+        HttpClientTestingModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+          }
+        })
+      ],
+      providers: []
     }).compileComponents();
-  });
+  }));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
