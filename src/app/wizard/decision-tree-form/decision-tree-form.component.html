@@ -1,0 +1,59 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{ 'wizard.decision-tree' | translate }}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+            <ng-container *ngIf="!isFinal(currentNode)">
+                <strong>{{ 'wizard.question' | translate }}</strong> {{ currentNode.description }}
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+                    <button mat-raised-button (click)="yes()">
+                        {{currentNode.nameYes}}
+                    </button>
+                    &nbsp;
+                    <button mat-raised-button (click)="no()">
+                        {{currentNode.nameNo}}
+                    </button>
+            </ng-container>
+            <br>
+        <br>
+        <ng-container *ngFor="let item of decisionTree">
+            <ng-container *ngIf="item.index != decisionTree.length - 1">
+                <strong >Q: </strong> {{item.node.description}} <u>{{item.node.decision ? 'yes' : 'no'}}</u> -->&nbsp;
+
+            </ng-container>
+            <ng-container *ngIf="item.node.decision == 'yes'">
+                TEST
+            </ng-container>
+            
+            <ng-container *ngIf="item.node.decision == 'no'">
+                TEST
+            </ng-container>
+            <ng-container *ngIf="item.index == decisionTree.length - 1">
+                <strong [style.color]="'red'">{{ 'wizard.salida' | translate }} </strong> {{item.node.description}}
+            </ng-container>
+        </ng-container>
+        <br>
+
+        <mat-card-actions>
+            <button mat-raised-button (click)="reset()">{{ 'wizard.reset' | translate }}</button>
+        </mat-card-actions>
+
+        <span>Current node JSON</span>&nbsp;
+        <button mat-button (click)="nodeJSONhidden = !nodeJSONhidden">Show/hide</button>
+        <pre [hidden]="nodeJSONhidden">
+            {{ currentNode | json }}
+        </pre>
+        <br>
+        <br>
+        <span>Decision Tree JSON</span>&nbsp;
+        <button mat-button (click)="treeJSONhidden = !treeJSONhidden">Show/hide</button>
+        <pre [hidden]="treeJSONhidden">
+            {{ decisionTree | json }}
+        </pre>
+    </mat-card-content>
+</mat-card>
+

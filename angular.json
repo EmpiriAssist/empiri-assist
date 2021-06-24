@@ -9,10 +9,19 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es": "src/locale/messages.es.xlf"
+        }
+      },
+
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/empiri-assist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -21,14 +30,19 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets"    
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "localize": ["es"],
+              "main": "src/main.ts"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -64,6 +78,9 @@
             "browserTarget": "empiri-assist:build"
           },
           "configurations": {
+            "es": {
+              "browserTarget": "empiri-assist:build:es"
+            },
             "production": {
               "browserTarget": "empiri-assist:build:production"
             }
@@ -87,6 +104,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

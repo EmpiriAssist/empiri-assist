@@ -9,6 +9,11 @@ import { Abstract } from './abstract';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
 
+    const experiments = [
+      { id: 100, name: 'Experimento', context: 'Prueba', goal: 'Prueba', method: 'Prueba', results: 'Prueba', conclusions: 'Prueba', analyze: 'analyze', purpose: 'purpose', respect: 'respect', pointOfView: 'pointOfView', contextGoal: 'context'},
+      { id: 101, name: 'Experiment', context: 'A', goal: 'B', method: 'C', results: 'D', conclusions: 'E', analyze: 'A', purpose: 'P', respect: 'R', pointOfView: 'P', contextGoal: 'C' }
+    ];
+
     const goals = [
       { id: 41, analyze: 'analyze', purpose: 'purpose', respect: 'respect', pointOfView: 'pointOfView', context: 'context' },
       { id: 42, analyze: 'A', purpose: 'P', respect: 'R', pointOfView: 'P', context: 'C' },
@@ -39,7 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 20, name: 'Tornado' }
     ];
 
-    return {goals, experimenters, abstracts, heroes};
+    return {experiments, goals, experimenters, abstracts, heroes};
   }
 
   // Overrides the genId method to ensure that a hero always has an id.

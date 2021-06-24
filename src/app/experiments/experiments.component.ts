@@ -2,12 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Experiment } from '../experiment';
 import { ExperimentService } from './experiment.service';
-import { GoalService } from '../goals/goal.service';
-import { AbstractService } from '../abstracts/abstract.service';
 import { MessageService } from '../message.service';
-import { Goal } from '../goal';
 import { Role } from '../role';
-import { Abstract } from '../abstract';
 import { Experimenter } from '../experimenter';
 import { ExperimentersComponent } from '../experimenters/experimenters.component';
 
@@ -23,9 +19,7 @@ export class ExperimentsComponent implements OnInit {
   role = Role;
   enumKeys=[];
 
-  constructor(private experimentService: ExperimentService,
-              private goalService: GoalService,
-              private abstractService: AbstractService) { }
+  constructor(private experimentService: ExperimentService) { }
 
   addFieldValue() {
     this.fieldArray.push(this.field)
@@ -44,40 +38,25 @@ export class ExperimentsComponent implements OnInit {
     this.experimentService.getExperiments()
     .subscribe(experiments => this.experiments = experiments);
   }
-  add(name: String, context: String, aGoal: String, method: String, results: string, conclusions: string,
-      analyze: String, purpose: String, respect: String, pointOfView: String, gContext: String,
-      eName: String, email: String, organization: String, role: Role, tasks: String): void {
+  add(name: string, context: string, goal: string, method: string, results: string, conclusions: string,
+      analyze: string, purpose: string, respect: string, pointOfView: string, contextGoal: string, experimenters: Experimenter[]): void {
 
     name = name.trim();
-    //Abstract
-    const abstract: Abstract = new Abstract();
-    abstract.context = context.trim();
-    abstract.goal = aGoal.trim();
-    abstract.method = method.trim();
-    abstract.results = results.trim();
-    abstract.conclusions = conclusions.trim();
-
-    //Goal
-    const goal: Goal = new Goal();
-    goal.analyze = analyze.trim();
-    goal.purpose = purpose.trim();
-    goal.respect = respect.trim();
-    goal.pointOfView = pointOfView.trim();
-    goal.context = gContext.trim();
-    //Experimenter
-    const experimenter: Experimenter = new Experimenter();
-    experimenter.name = eName.trim();
-    experimenter.email = email.trim();
-    experimenter.organization = organization.trim();
-    experimenter.role = role;
-    experimenter.tasks = tasks.trim();
-    //Experimenters
-    const experimenters: Experimenter[] = [];
-
-    experimenters.push(experimenter);
+    context = context.trim();
+    goal = goal.trim();
+    method = method.trim();
+    results = results.trim();
+    conclusions = conclusions.trim();
+    analyze = analyze.trim();
+    purpose = purpose.trim();
+    respect = respect.trim();
+    pointOfView = pointOfView.trim();
+    contextGoal = contextGoal.trim();
+    experimenters = this.experimentService.getExperimenters();
 
     if (!name) { return; }
-    this.experimentService.addExperiment({ name, abstract, goal, experimenters } as Experiment)
+    this.experimentService.addExperiment({ name, context, goal, method, results, conclusions, analyze, purpose, respect, pointOfView,
+    contextGoal, experimenters } as Experiment)
       .subscribe(name => {
         this.experiments.push(name);
       });
